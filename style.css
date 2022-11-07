@@ -111,12 +111,38 @@ body::after
 {
     background: rgb(255, 255, 255, 0.05);
 }
+
 h6
 {
-    color: rgba(255, 255, 255, 0.644);
-    padding: 20px;
-    border: solid 1px rgba(211, 211, 211, 0.205);
-    width: 90px;
-    height: 50px;
-    border-radius: 20px 30px 0px 20px ;
+    padding: 10px;
+    display: flex;
+    position:  relative;
+    font-size: 1em;
+    color: gray;
+}
+/*Animation name calculator*/
+h6::before
+{
+    padding: 0px;
+    content: attr(data-text);
+    position: absolute;
+    width: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right:  2px solid #fff;
+    animation: animate 5s linear infinite;
+    filter: drop-shadow(0 0 20px #fff) drop-shadow(0 0 50px #fff);
+    color: white;
+    border: 1px solid transparent;
+}
+@keyframes animate
+{
+    0%,2%,100%
+    {
+        width: 0;
+    }
+    50%,50%
+    {
+        width: 100%;
+    }
 }
