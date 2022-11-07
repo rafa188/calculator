@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="container">
+        <h6>Calculator</h6>
         <form class="calculator" name="calc">
             <input type="text" readonly class="value" name="txt"/>
             <span class="num clear" onclick="calc.txt.value = ''">c</span>
@@ -31,5 +32,14 @@
             <span class="num equal" onclick="document.calc.txt.value =eval(calc.txt.value)">=</span>
         </form>
     </div>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".container"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2,
+        });
+    </script>
 </body>
 </html
